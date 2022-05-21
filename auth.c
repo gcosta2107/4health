@@ -2,10 +2,19 @@
 #include <stdlib.h>
 #include <string.h>
 
+void menuLogin(){
+	printf("\n======== MENU ========\n");
+	printf("1 >> Login\n");
+	printf("2 >> Criar conta\n");
+	printf("3 >> Sair\n");
+}
+
 void cadastrar_usuario(){
 
     char user[100];
     char password[100];
+
+    printf("\n========== CADASTRO =============\n");
 
     printf("Informe o usuario: ");
     fflush(stdin);
@@ -31,11 +40,13 @@ int login(){
     char user_confirm[100];
     char password_confirm[100];
 
-    printf("Informe o login: ");
+    printf("\n========== LOGIN =============\n");
+
+    printf("Login: ");
     fflush(stdin);
     gets(user);
 
-    printf("Informe a senha: ");
+    printf("Senha: ");
     fflush(stdin);
     gets(password);
 
@@ -51,10 +62,13 @@ int login(){
         return 0;
     }
 
-    fclose(file);
+	fclose(file);
 }
 
 int main(){
+
+    int opcao = 0;
+    int validador;
 
     FILE* file = fopen("pessoas.txt","r");
 
@@ -62,16 +76,34 @@ int main(){
         file = fopen("pessoas.txt","w");
         fclose(file);
     }
+    
+    do{
+        menuLogin();
+        printf("Opcao: "); 
+        scanf("%i",&opcao);
+        getchar();
 
-    cadastrar_usuario();
-    int validador = login();
+        switch (opcao){
+            case 1:
+                validador = login();
+                
 
-    if(validador == 0){
-        printf("Usuario ou senha incorretos");
-    }
-    else if(validador == 1){
-        printf("Usuario logado");
-    }
+                if(validador == 0){
+                    printf("\nUsuario ou senha incorretos !!!");
+                }
+                else if(validador == 1){
+                    printf("\nUsuario logado !!!");
+                    opcao = 3;
+                }
+
+                break;
+
+            case 2:
+                cadastrar_usuario();
+                break;
+        }
+
+    }while(opcao != 3);
 
     return 0;
 }
