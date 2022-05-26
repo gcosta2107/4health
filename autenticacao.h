@@ -24,7 +24,7 @@ void cadastrar_usuario(){
     fflush(stdin);
     gets(password);
 
-    FILE* file = fopen("cadastros.txt","w");
+    FILE* file = fopen("arquivos/cadastros.txt","w");
 
     fprintf(file, "%s\n", user);
     fprintf(file, "%s", password);
@@ -50,7 +50,7 @@ int login(){
     fflush(stdin);
     gets(password);
 
-    FILE* file = fopen("cadastros.txt","r");
+    FILE* file = fopen("arquivos/cadastros.txt","r");
 
     fscanf(file,"%s\n", user_confirm);
     fscanf(file,"%s", password_confirm);
@@ -63,47 +63,4 @@ int login(){
     }
 
 	fclose(file);
-}
-
-int main(){
-
-    int opcao = 0;
-    int validador;
-
-    FILE* file = fopen("cadastros.txt","r");
-
-    if(file == NULL){
-        file = fopen("cadastros.txt","w");
-        fclose(file);
-    }
-    
-    do{
-        menuLogin();
-        printf("Opcao: "); 
-        scanf("%i",&opcao);
-        getchar();
-
-        switch (opcao){
-            case 1:
-                validador = login();
-                
-
-                if(validador == 0){
-                    printf("\nUsuario ou senha incorretos !!!");
-                }
-                else if(validador == 1){
-                    printf("\nUsuario logado !!!");
-                    opcao = 3;
-                }
-
-                break;
-
-            case 2:
-                cadastrar_usuario();
-                break;
-        }
-
-    }while(opcao != 3);
-
-    return 0;
 }
