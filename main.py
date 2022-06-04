@@ -1,30 +1,45 @@
 from leitura_arquivos import leitura_frases
+from leitura_arquivos import view_file
 from automacao_whatsapp import enviar_pergunta
+from automacao_whatsapp import selecionar_pergunta
+import webbrowser
+import tkinter
+from tkinter import messagebox
 
-name = input("Nome do contato: ")
-num_file = int(input("Informe a lista: "))
-msg = int(input("Informe o numero da pergunta: "))
+def menu():
+    print("========== Menu =============")
+    print("1 >> Visualizar perguntas")
+    print("2 >> Enviar pergunta")
+    print("0 >> Sair")
 
-try:
-    if (num_file == 1):
-        frases = leitura_frases("arquivos/listapergunta1.txt")
-        pergunta_enviada = frases[msg - 1]
-        enviar_pergunta(name,pergunta_enviada)
-        
-    elif (num_file == 2):
-        frases = leitura_frases("arquivos/listapergunta1.txt")
-        pergunta_enviada = frases[msg - 1]
-        enviar_pergunta(name,pergunta_enviada)
+while True:
+    menu()
+    opcao_menu = int(input("Opcao: "))
 
-    elif (num_file == 3):
-        frases = leitura_frases("arquivos/listapergunta1.txt")
-        pergunta_enviada = frases[msg - 1]
-        enviar_pergunta(name,pergunta_enviada)
+    if(opcao_menu == 0):
+        quit()
 
-    elif (num_file == 4):
-        frases = leitura_frases("arquivos/listapergunta1.txt")
-        pergunta_enviada = frases[msg - 1]
-        enviar_pergunta(name,pergunta_enviada)
+    if opcao_menu == 1:
+        num_view_file = int(input("Informe a lista: "))
 
-except FileNotFoundError:
-    print("Lista inexistente")
+        view_file(num_view_file)
+
+
+    if opcao_menu == 2:
+
+        name = input("Nome do contato: ")
+        num_file = int(input("Informe a lista: "))
+        msg = int(input("Informe o numero da pergunta: "))
+
+        messagebox.showinfo("Info", "Permissao para abrir whatsapp")
+
+        try:
+            chrome = webbrowser.get('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s')
+            chrome.open('https://web.whatsapp.com/')
+
+            selecionar_pergunta(name,num_file,msg)
+
+            quit()
+                
+        except FileNotFoundError:
+            print("Lista inexistente")

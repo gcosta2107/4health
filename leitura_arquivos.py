@@ -11,3 +11,28 @@ def leitura_frases(arquivo):
 
     except FileNotFoundError:
         print("Arquivo inexistente!")
+
+def view_file(view_file):
+    if (view_file == 1):
+        frases = leitura_frases("arquivos/listapergunta1.txt")
+
+        for i in range(len(frases)):
+            print(f"{i+1}. {frases[i]}")
+        
+    elif (view_file == 2):
+        frases = leitura_frases("arquivos/listapergunta2.txt")
+
+        for i in range(len(frases)):
+            print(f"{i+1}. {frases[i]}")
+
+    elif (view_file == 3):
+        frases = leitura_frases("arquivos/listapergunta3.txt")
+
+        for i in range(len(frases)):
+            print(f"{i+1}. {frases[i]}")
+
+    elif (view_file == 4):
+        frases = leitura_frases("arquivos/listapergunta4.txt")
+
+        for i in range(len(frases)):
+            print(f"{i+1}. {frases[i]}")
