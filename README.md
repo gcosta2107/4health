@@ -5,10 +5,10 @@ conceito, que visa o apoio a medicina em locais precarios.
 
 ### Integrantes
 
-* CS: 
+* CC: 
   - Diogo Costa: @Dcmaran 
   - Filipe Moreno: @MoonHawlk
-  - Gabriel Costa: 
+  - Gabriel Costa: @gcosta2107
   - Lucas Barros: 
   - Marcelo Silvestre: 
   - Pedro Xavier:
@@ -17,12 +17,25 @@ conceito, que visa o apoio a medicina em locais precarios.
    - Davi Chiappetta
    - João Victor
 
-### Como usar a ferramenta?
+### Como instalar a ferramente?
 * Instalação:
   ##### 1 - Primeiramente você deve baixar o repositorio do Github, todos os arquivos usados seram disponibilizados pelo mesmo.
-  ##### 2 - Após isso, execute o arquivos ____.c e faça seu cadastro.
-  ##### 3 - Finalizado as etapas anteriores, começe adicionando uma frase, todas as frases estão definidas como "NADA", até o momento da primeira execução.
-  ##### 4 - Por fim, já tendo concluido todos os passos, abra o arquivo .py, e escolha para quem enviar as mensagens, as mensagens podem ser escolhidas antes de enviar para o usuario final.
-  ##### 5 - O app irá exibir uma mensagem solicitando que seja aberto o Whatsapp Web, e após feito isso, **NÃO MEXER NO COMPUTADOR ANTES DA FINALIZAÇÃO DA MENSAGEM**.
+  ##### 2 - Após isso, descompacte a pasta e procure o arquivo main.c.
+  ##### 3 - Realizado essa etapa, abra o arquivo e preencha o cadastro.
+  ##### 4 - Feito isso, você deve ter acesso para editar e vizualizar os arquivos de mensagem.
+
+### Como utilizar a ferramente?
+* Utilização:
+  ##### 1 - Abra o main.py para conseguir visualizar as perguntas ou enviar as mensagens.
+  ##### 2 - Selecione para enviar mensagem.
+  ##### 3 - Uma interface irá aparecer, preencha com os respectivos dados solicitados.
+  ##### 4 - Feito os passos anteriores, uma janela de permissão irá abrir. 
+  ##### 5 - Concorde, o Whatsapp será aberto, e o processo de automação será iniciado.
+
+### Importante!
+* Nota:
+  ##### Para o funcionamento correto do aplicativo é necessario executar o comando " pip install -r requirements.txt ".
+  ##### Além disso, durante todo o processo da automação ( Etapa em que o Whatsapp já estiver aberto ), **NÃO** mova seu cursor do mouse !!!! Isso irá afetar o programa e possivelmente gerar erros indesejados.
 
   
+
