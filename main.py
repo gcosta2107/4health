@@ -2,6 +2,10 @@ from leitura_arquivos import leitura_frases
 from leitura_arquivos import view_file
 from automacao_whatsapp import enviar_pergunta
 from automacao_whatsapp import selecionar_pergunta
+from tkinter_ui import user_interface
+from tkinter_ui import getcontact
+from tkinter_ui import getlist
+from tkinter_ui import getquestion
 import webbrowser
 import tkinter
 from tkinter import messagebox
@@ -27,17 +31,14 @@ while True:
 
     if opcao_menu == 2:
 
-        name = input("Nome do contato: ")
-        num_file = int(input("Informe a lista: "))
-        msg = int(input("Informe o numero da pergunta: "))
-
-        messagebox.showinfo("Info", "Permissao para abrir whatsapp")
-
         try:
-            chrome = webbrowser.get('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s')
-            chrome.open('https://web.whatsapp.com/')
+            user_interface()
 
-            selecionar_pergunta(name,num_file,msg)
+            contact = getcontact()
+            lista = getlist()
+            question = getquestion()
+
+            selecionar_pergunta(contact,int(lista),int(question))
 
             quit()
                 

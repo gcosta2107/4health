@@ -31,7 +31,7 @@ def enviar_pergunta(name,msg):
     auto.moveTo(228, 180)
     time.sleep(2)
     auto.click()
-    #auto.write(name)
+    auto.write(name)
 
     #clica no primerio nome encontrado
     auto.moveTo(312, 261)
