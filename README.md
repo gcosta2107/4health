@@ -17,14 +17,14 @@ conceito, que visa o apoio a medicina em locais precarios.
    - Davi Chiappetta
    - João Victor
 
-### Como instalar a ferramente?
+### Como instalar a ferramenta?
 * Instalação:
   ##### 1 - Primeiramente você deve baixar o repositorio do Github, todos os arquivos usados seram disponibilizados pelo mesmo.
   ##### 2 - Após isso, descompacte a pasta e procure o arquivo main.c.
   ##### 3 - Realizado essa etapa, abra o arquivo e preencha o cadastro.
   ##### 4 - Feito isso, você deve ter acesso para editar e vizualizar os arquivos de mensagem.
 
-### Como utilizar a ferramente?
+### Como utilizar a ferramenta?
 * Utilização:
   ##### 1 - Abra o main.py para conseguir visualizar as perguntas ou enviar as mensagens.
   ##### 2 - Selecione para enviar mensagem.
