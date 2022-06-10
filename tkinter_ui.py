@@ -20,6 +20,7 @@ def AskPermission():
     else:
         messagebox.showinfo("Info", "Programa Encerrado")
         app.destroy()
+        quit()
 
 def center_window(width=300, height=200):
     screen_width = app.winfo_screenwidth()
@@ -38,8 +39,10 @@ def user_interface():
     global questionString
 
     app = tk.Tk()
+    
     app.title("4health")
     center_window(225, 225)
+    app.focus_force()
     app.resizable(width=False, height=False)
 
     logo = tk.PhotoImage(file='logo_resized.png')

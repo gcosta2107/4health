@@ -1,7 +1,7 @@
 from leitura_arquivos import leitura_frases
 from leitura_arquivos import view_file
 from automacao_whatsapp import enviar_pergunta
-from automacao_whatsapp import selecionar_pergunta
+from automacao_whatsapp import selecionar_arquivo
 from tkinter_ui import user_interface
 from tkinter_ui import getcontact
 from tkinter_ui import getlist
@@ -34,11 +34,11 @@ while True:
         try:
             user_interface()
 
-            contact = getcontact()
-            lista = getlist()
-            question = getquestion()
+            contact_label = getcontact()
+            lista_label = getlist()
+            question_label = getquestion()
 
-            selecionar_pergunta(contact,int(lista),int(question))
+            selecionar_arquivo(contact_label,int(lista_label),int(question_label))
 
             quit()
                 

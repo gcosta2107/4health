@@ -2,7 +2,7 @@ import pyautogui as auto
 import time
 from leitura_arquivos import leitura_frases
 
-def selecionar_pergunta(name,num_file,msg):
+def selecionar_arquivo(name,num_file,msg):
     if (num_file == 1):
             frases = leitura_frases("arquivos/listapergunta1.txt")
             pergunta_enviada = frases[msg - 1]
