@@ -3,6 +3,7 @@
 #include <string.h>
 #include "autenticacao.h"
 #include "perguntas.h"
+#include "pacientes.h"
 
 //funções do perguntas.h
 FILE* abrirArquivoLista(FILE *file, int a);
@@ -10,6 +11,8 @@ void alterarPerguntaLista(FILE* file, int num_lista);
 void criarArquivoListaPerguntas();
 void printarMenuPerguntas();
 void escreverArquivoPerguntasPadrao();
+void cadastrar_paciente();
+void visualizar_pacientes();
 
 //funções do arquivo autenticacao.h
 void menuLogin();
@@ -212,6 +215,15 @@ int main(){
             } while (opcao_alterar_pergunta != 0);
             
             break;
+
+            case 4:
+                cadastrar_paciente();
+                break;
+
+            case 5:
+                printf("\n");
+                visualizar_pacientes();
+                break;
         }
 
     } while (opcao != 0);

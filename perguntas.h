@@ -116,6 +116,8 @@ void printarMenuPerguntas(){
     printf("1 >> Visualizar perguntas Padrao\n");
 	printf("2 >> Visualizar lista de Perguntas\n");
 	printf("3 >> Editar lista de Perguntas\n");
+    printf("4 >> Cadastrar Paciente\n");
+    printf("5 >> Visualizar Pacientes\n");
     printf("0 >> Sair\n");
 }
 
