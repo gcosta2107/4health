@@ -1,6 +1,8 @@
 import tkinter as tk
 import webbrowser
+from tkinter import *
 from tkinter import messagebox, ttk
+from tkinter.ttk import Progressbar
 from leitura_arquivos import leitura_contatos
 
 
@@ -34,7 +36,65 @@ def center_window(window,width=300, height=200):
 
     window.geometry('%dx%d+%d+%d' % (width, height, x, y - 50))
 
-def user_interface():     
+def update_progressbar():
+
+    theme_color='#249794'
+
+    l4=Label(w,text='Loading...',fg='white',bg=theme_color)
+    lst4=('Calibri (Body)',10)
+    l4.config(font=lst4)
+    l4.place(x=18,y=210)
+    
+    import time
+    r=0
+    for i in range(100):
+        progress['value']=r
+        w.update_idletasks()
+        time.sleep(0.03)
+        r=r+1
+    
+    w.destroy()
+    user_interface()
+
+def splash_screen():
+    global w
+    global progress
+    
+    w=Tk()
+    w.resizable(False,False)
+    w.focus_force()
+    center_window(w,427,250)
+
+    #customize progressbar
+    s = ttk.Style()
+    s.theme_use('clam')
+    s.configure("red.Horizontal.TProgressbar", foreground='red', background='#4f4f4f')
+
+    #place progressbar
+    progress=Progressbar(w,style="red.Horizontal.TProgressbar",orient=HORIZONTAL,length=500,mode='determinate')  
+    progress.place(x=-10,y=235)
+
+    #theme color
+    theme_color='#249794'
+
+    Frame(w,width=427,height=241,bg=theme_color).place(x=0,y=0)
+    b1=Button(w,width=10,height=1,text='Iniciar',command=update_progressbar,border=0,fg=theme_color,bg='white')
+    b1.place(x=170,y=200)
+
+    l1=Label(w,text='4HEALTH',fg='white',bg=theme_color)
+    lst1=('Calibri (Body)',18,'bold')
+    l1.config(font=lst1)
+    l1.place(x=50,y=80)
+
+    l3=Label(w,text='By group 4',fg='white',bg=theme_color)
+    lst3=('Calibri (Body)',7)
+    l3.config(font=lst3)
+    l3.place(x=50,y=110)
+
+
+    w.mainloop()
+
+def user_interface():
     global app
     global contactString
     global listString

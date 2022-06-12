@@ -1,6 +1,6 @@
 from leitura_arquivos import leitura_frases,view_file
 from automacao_whatsapp import enviar_pergunta,iniciar_automacao
-from tkinter_ui import user_interface,getcontact,getlist,getquestion
+from tkinter_ui import user_interface,getcontact,getlist,getquestion,splash_screen
 import webbrowser
 import tkinter as tk
 from tkinter import messagebox
@@ -29,7 +29,7 @@ while True:
     if opcao_menu == 2:
 
         try:
-            user_interface()
+            splash_screen()
 
             contact_label = getcontact()
             lista_label = getlist()
