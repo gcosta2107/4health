@@ -19,7 +19,7 @@ conceito, que visa o apoio a medicina em locais precarios.
 
 ### Como instalar a ferramenta?
 * Instalação:
-  ##### 1 - Primeiramente você deve baixar o repositorio do Github, todos os arquivos usados seram disponibilizados pelo mesmo.
+  ##### 1 - Primeiramente você deve baixar o repositorio do Github, todos os arquivos usados serão disponibilizados pelo mesmo.
   ##### 2 - Após isso, descompacte a pasta e procure o arquivo main.c.
   ##### 3 - Realizado essa etapa, abra o arquivo e preencha o cadastro.
   ##### 4 - Feito isso, você deve ter acesso para editar e vizualizar os arquivos de mensagem.
