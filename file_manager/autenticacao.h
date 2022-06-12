@@ -24,7 +24,7 @@ void cadastrar_usuario(){
     fflush(stdin);
     gets(password);
 
-    FILE* file = fopen("arquivos/cadastros.txt","w");
+    FILE* file = fopen("../db/cadastros.txt","w");
 
     fprintf(file, "%s\n", user);
     fprintf(file, "%s", password);
@@ -50,7 +50,7 @@ int login(){
     fflush(stdin);
     gets(password);
 
-    FILE* file = fopen("arquivos/cadastros.txt","r");
+    FILE* file = fopen("../db/cadastros.txt","r");
 
     fscanf(file,"%s\n", user_confirm);
     fscanf(file,"%s", password_confirm);

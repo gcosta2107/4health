@@ -14,7 +14,7 @@ def leitura_frases(arquivo):
 
 def leitura_contatos():
 
-    var1 = open("arquivos/Contatos.txt", "r").readlines()
+    var1 = open("../db/Contatos.txt", "r").readlines()
 
     data = []
 
@@ -25,25 +25,25 @@ def leitura_contatos():
 
 def view_file(view_file):
     if (view_file == 1):
-        frases = leitura_frases("arquivos/listapergunta1.txt")
+        frases = leitura_frases("../db/listapergunta1.txt")
 
         for i in range(len(frases)):
             print(f"{i+1}. {frases[i]}")
         
     elif (view_file == 2):
-        frases = leitura_frases("arquivos/listapergunta2.txt")
+        frases = leitura_frases("../db/listapergunta2.txt")
 
         for i in range(len(frases)):
             print(f"{i+1}. {frases[i]}")
 
     elif (view_file == 3):
-        frases = leitura_frases("arquivos/listapergunta3.txt")
+        frases = leitura_frases("../db/listapergunta3.txt")
 
         for i in range(len(frases)):
             print(f"{i+1}. {frases[i]}")
 
     elif (view_file == 4):
-        frases = leitura_frases("arquivos/listapergunta4.txt")
+        frases = leitura_frases("../db/listapergunta4.txt")
 
         for i in range(len(frases)):
             print(f"{i+1}. {frases[i]}")

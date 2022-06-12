@@ -6,19 +6,19 @@
 FILE* abrirArquivoLista(FILE *file, int a){
     if (a == 1)
     {
-        file = fopen("arquivos/listapergunta1.txt", "w");
+        file = fopen("../db/listapergunta1.txt", "w");
     }
     else if (a == 2)
     {
-        file = fopen("arquivos/listapergunta2.txt", "w");
+        file = fopen("../db/listapergunta2.txt", "w");
     }
     else if (a == 3)
     {
-        file = fopen("arquivos/listapergunta3.txt", "w");
+        file = fopen("../db/listapergunta3.txt", "w");
     }
     else if (a == 4)
     {
-        file = fopen("arquivos/listapergunta4.txt", "w");
+        file = fopen("../db/listapergunta4.txt", "w");
     }
     
     return file;
@@ -79,31 +79,31 @@ void alterarPerguntaLista(FILE* file, int num_lista){
 void criarArquivoListaPerguntas(){
         
         FILE *file1, *file2, *file3, *file4;
-        file1 = fopen("arquivos/listapergunta1.txt", "r");
+        file1 = fopen("../db/listapergunta1.txt", "r");
         if (file1 == NULL)
         {
-            file1 = fopen("arquivos/listapergunta1.txt", "w");
+            file1 = fopen("../db/listapergunta1.txt", "w");
             fprintf(file1, "Nada\nNada\nNada\nNada");
             fclose(file1);
         }
-        file2 = fopen("arquivos/listapergunta2.txt", "r");
+        file2 = fopen("../db/listapergunta2.txt", "r");
         if (file2 == NULL)
         {
-            file2 = fopen("arquivos/listapergunta2.txt", "w");
+            file2 = fopen("../db/listapergunta2.txt", "w");
             fprintf(file2, "Nada\nNada\nNada\nNada");
             fclose(file2);
         }
-        file3 = fopen("arquivos/listapergunta3.txt", "r");
+        file3 = fopen("../db/listapergunta3.txt", "r");
         if (file3 == NULL)
         {
-            file3 = fopen("arquivos/listapergunta3.txt", "w");
+            file3 = fopen("../db/listapergunta3.txt", "w");
             fprintf(file3, "Nada\nNada\nNada\nNada");
             fclose(file3);
         }
-        file4 = fopen("arquivos/listapergunta4.txt", "r");
+        file4 = fopen("../db/listapergunta4.txt", "r");
         if (file4 == NULL)
         {
-            file4 = fopen("arquivos/listapergunta4.txt", "w");
+            file4 = fopen("../db/listapergunta4.txt", "w");
             fprintf(file4, "Nada\nNada\nNada\nNada");
             fclose(file4);
         }
@@ -111,19 +111,8 @@ void criarArquivoListaPerguntas(){
 }
 
 
-void printarMenuPerguntas(){
-    printf("========== Mensagem =============\n");
-    printf("1 >> Visualizar perguntas Padrao\n");
-	printf("2 >> Visualizar lista de Perguntas\n");
-	printf("3 >> Editar lista de Perguntas\n");
-    printf("4 >> Cadastrar Paciente\n");
-    printf("5 >> Visualizar Pacientes\n");
-    printf("0 >> Sair\n");
-}
-
-
 void escreverArquivoPerguntasPadrao(){
-    FILE *file = fopen("arquivos/perguntaspadrao.txt", "w");
+    FILE *file = fopen("../db/perguntaspadrao.txt", "w");
 
     // Editar com as perguntas retiradas do médico
 

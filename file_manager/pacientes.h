@@ -3,7 +3,7 @@
 void cadastrar_paciente(){
     char paciente[40];
 
-    FILE* file = fopen("arquivos/Contatos.txt","a");
+    FILE* file = fopen("../db/Contatos.txt","a");
 
     printf("Inserir paciente: ");
     scanf("%s", paciente);
@@ -18,7 +18,7 @@ void visualizar_pacientes(){
     char paciente[40];
     int contador_linhas = 1;
 
-    FILE* file = fopen("arquivos/Contatos.txt","r");
+    FILE* file = fopen("../db/Contatos.txt","r");
 
     printf("\n========== PACIENTES =============\n");
 

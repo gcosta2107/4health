@@ -1,5 +1,5 @@
 from leitura_arquivos import leitura_frases,view_file
-from automacao_whatsapp import enviar_pergunta,selecionar_arquivo
+from automacao_whatsapp import enviar_pergunta,iniciar_automacao
 from tkinter_ui import user_interface,getcontact,getlist,getquestion
 import webbrowser
 import tkinter as tk
@@ -34,13 +34,17 @@ while True:
             contact_label = getcontact()
             lista_label = getlist()
             question_label = getquestion()
+
+            contact_label = contact_label.strip("\n")
+            lista_label = int(lista_label)
+            question_label = int(question_label)
             
-            selecionar_arquivo(contact_label,int(lista_label),int(question_label))
+            iniciar_automacao(contact_label,lista_label,question_label)
 
             quit()
                 
         except ValueError:
             messagebox.showerror("Error", "Informacao invalida, programa encerrado...")
 
-            print("\nEsperado um numero inteiro")
+            print("\nErro de execucao")
             quit()

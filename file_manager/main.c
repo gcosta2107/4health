@@ -9,32 +9,44 @@
 FILE* abrirArquivoLista(FILE *file, int a);
 void alterarPerguntaLista(FILE* file, int num_lista);
 void criarArquivoListaPerguntas();
-void printarMenuPerguntas();
 void escreverArquivoPerguntasPadrao();
-void cadastrar_paciente();
-void visualizar_pacientes();
 
 //funções do arquivo autenticacao.h
 void menuLogin();
 void cadastrar_usuario();
 int login();
 
+//funções do pacientes autenticacao.h
+void cadastrar_paciente();
+void visualizar_pacientes();
+
+void printarMenu(){
+    printf("\n========== Mensagem =============\n");
+    printf("1 >> Visualizar perguntas Padrao\n");
+	printf("2 >> Visualizar lista de Perguntas\n");
+	printf("3 >> Editar lista de Perguntas\n");
+    printf("4 >> Cadastrar Paciente\n");
+    printf("5 >> Visualizar Pacientes\n");
+    printf("0 >> Sair\n");
+}
+
 int main(){
     int opcao = 0;
     int validador = 0;
 
-    FILE* f = fopen("arquivos/cadastros.txt","r");
+    FILE* f = fopen("../db/cadastros.txt","r");
 
     if(f == NULL){
-        f = fopen("arquivos/cadastros.txt","w");
+        f = fopen("../db/cadastros.txt","w");
         fclose(f);
     }
     
     do{
         menuLogin();
-        printf("Opcao: "); 
+        printf("\nOpcao: ");
         scanf("%i",&opcao);
         getchar();
+        printf("\n");
 
         switch (opcao){
             case 1:
@@ -80,16 +92,16 @@ int main(){
     criarArquivoListaPerguntas();
     escreverArquivoPerguntasPadrao();
 
-    file1 = fopen("arquivos/listapergunta1.txt", "r");
-    file2 = fopen("arquivos/listapergunta2.txt", "r");
-    file3 = fopen("arquivos/listapergunta3.txt", "r");
-    file4 = fopen("arquivos/listapergunta4.txt", "r");
+    file1 = fopen("../db/listapergunta1.txt", "r");
+    file2 = fopen("../db/listapergunta2.txt", "r");
+    file3 = fopen("../db/listapergunta3.txt", "r");
+    file4 = fopen("../db/listapergunta4.txt", "r");
     
-    FILE *file = fopen("arquivos/perguntaspadrao.txt", "r");
+    FILE *file = fopen("../db/perguntaspadrao.txt", "r");
 
     do
     {
-        printarMenuPerguntas();
+        printarMenu();
         printf("Opcao: ");
         scanf("%d", &opcao);
 
@@ -108,10 +120,10 @@ int main(){
             break;
         
         case 2:
-            file1 = fopen("arquivos/listapergunta1.txt", "r");
-            file2 = fopen("arquivos/listapergunta2.txt", "r");
-            file3 = fopen("arquivos/listapergunta3.txt", "r");
-            file4 = fopen("arquivos/listapergunta4.txt", "r");
+            file1 = fopen("../db/listapergunta1.txt", "r");
+            file2 = fopen("../db/listapergunta2.txt", "r");
+            file3 = fopen("../db/listapergunta3.txt", "r");
+            file4 = fopen("../db/listapergunta4.txt", "r");
 
             printf("Numero da lista: ");
             scanf("%d", &num_lista);
@@ -170,10 +182,10 @@ int main(){
         case 3:
             do
             {
-                file1 = fopen("arquivos/listapergunta1.txt", "r");
-                file2 = fopen("arquivos/listapergunta2.txt", "r");
-                file3 = fopen("arquivos/listapergunta3.txt", "r");
-                file4 = fopen("arquivos/listapergunta4.txt", "r");
+                file1 = fopen("../db/listapergunta1.txt", "r");
+                file2 = fopen("../db/listapergunta2.txt", "r");
+                file3 = fopen("../db/listapergunta3.txt", "r");
+                file4 = fopen("../db/listapergunta4.txt", "r");
 
                 printf("Numero da lista: ");
                 scanf("%d", &num_lista);
