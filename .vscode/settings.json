@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "cstdlib": "c",
-        "perguntas.h": "c",
-        "cadastro_pacientes.h": "c"
-    }
-}
