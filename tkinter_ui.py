@@ -1,6 +1,8 @@
 import tkinter as tk
-from tkinter import messagebox
 import webbrowser
+from tkinter import messagebox, ttk
+from leitura_arquivos import leitura_contatos
+
 
 def getcontact():
     return contactString.get()
@@ -22,15 +24,15 @@ def AskPermission():
         app.destroy()
         quit()
 
-def center_window(width=300, height=200):
-    screen_width = app.winfo_screenwidth()
-    screen_height = app.winfo_screenheight()
+def center_window(window,width=300, height=200):
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
     
     # calculate x and y coordinates for the Tk root window
     x = (screen_width/2) - (width/2)
     y = (screen_height/2) - (height/2)
 
-    app.geometry('%dx%d+%d+%d' % (width, height, x, y - 50))
+    window.geometry('%dx%d+%d+%d' % (width, height, x, y - 50))
 
 def user_interface():     
     global app
@@ -41,7 +43,7 @@ def user_interface():
     app = tk.Tk()
     
     app.title("4health")
-    center_window(225, 225)
+    center_window(app,225, 225)
     app.focus_force()
     app.resizable(width=False, height=False)
 
@@ -59,8 +61,9 @@ def user_interface():
     labelQuestion.place(x=5,y=160)
 
     contactString = tk.StringVar()
-    entryContact = tk.Entry(app, width=20, textvariable=contactString)
+    entryContact = ttk.Combobox(app,values = leitura_contatos(),width=17, textvariable=contactString)
     entryContact.place(x=65,y=100)
+    entryContact['state'] = 'readonly'
 
     listString = tk.StringVar()
     entryList = tk.Entry(app, width=20, textvariable=listString)
@@ -72,9 +75,5 @@ def user_interface():
 
     resultButton = tk.Button(app, text = 'Enviar', command=AskPermission)
     resultButton.place(x=5,y=190)
-
-    getcontact()
-    getlist()
-    getquestion()
 
     app.mainloop()

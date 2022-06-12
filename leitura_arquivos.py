@@ -12,6 +12,17 @@ def leitura_frases(arquivo):
     except FileNotFoundError:
         print("Arquivo inexistente!")
 
+def leitura_contatos():
+
+    var1 = open("arquivos/Contatos.txt", "r").readlines()
+
+    data = []
+
+    for line in var1:
+        data.append(line)
+
+    return data
+
 def view_file(view_file):
     if (view_file == 1):
         frases = leitura_frases("arquivos/listapergunta1.txt")

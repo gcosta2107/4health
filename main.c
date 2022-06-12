@@ -90,7 +90,9 @@ int main(){
     do
     {
         printarMenuPerguntas();
+        printf("Opcao: ");
         scanf("%d", &opcao);
+
         switch (opcao)
         {
         case 1:

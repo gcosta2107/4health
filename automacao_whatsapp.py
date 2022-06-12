@@ -1,27 +1,39 @@
 import pyautogui as auto
 import time
+from tkinter import messagebox
 from leitura_arquivos import leitura_frases
 
+
 def selecionar_arquivo(name,num_file,msg):
-    if (num_file == 1):
+    try:
+        if (num_file == 1):
+                frases = leitura_frases("arquivos/listapergunta1.txt")
+                pergunta_enviada = frases[msg - 1]
+                enviar_pergunta(name,pergunta_enviada)
+
+        elif (num_file == 2):
             frases = leitura_frases("arquivos/listapergunta1.txt")
             pergunta_enviada = frases[msg - 1]
             enviar_pergunta(name,pergunta_enviada)
 
-    elif (num_file == 2):
-        frases = leitura_frases("arquivos/listapergunta1.txt")
-        pergunta_enviada = frases[msg - 1]
-        enviar_pergunta(name,pergunta_enviada)
+        elif (num_file == 3):
+            frases = leitura_frases("arquivos/listapergunta1.txt")
+            pergunta_enviada = frases[msg - 1]
+            enviar_pergunta(name,pergunta_enviada)
 
-    elif (num_file == 3):
-        frases = leitura_frases("arquivos/listapergunta1.txt")
-        pergunta_enviada = frases[msg - 1]
-        enviar_pergunta(name,pergunta_enviada)
+        elif (num_file == 4):
+            frases = leitura_frases("arquivos/listapergunta1.txt")
+            pergunta_enviada = frases[msg - 1]
+            enviar_pergunta(name,pergunta_enviada)
+        else:
+            messagebox.showerror("Error", "Informacao invalida, programa encerrado...")
+            print("Lista nao encontrada!")
+            quit()
 
-    elif (num_file == 4):
-        frases = leitura_frases("arquivos/listapergunta1.txt")
-        pergunta_enviada = frases[msg - 1]
-        enviar_pergunta(name,pergunta_enviada)
+    except IndexError:
+        messagebox.showerror("Error", "Informacao invalida, programa encerrado...")
+        print("Pergunta invalida!")
+        quit()
 
 def enviar_pergunta(name,msg):
 
