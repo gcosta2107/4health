@@ -14,7 +14,7 @@ def leitura_frases(arquivo):
 
 def leitura_contatos():
 
-    var1 = open("./db/Contatos.txt", "r").readlines()
+    var1 = open("../db/Contatos.txt", "r").readlines()
 
     data = []
 

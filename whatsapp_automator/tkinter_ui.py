@@ -107,7 +107,7 @@ def user_interface():
     app.focus_force()
     app.resizable(width=False, height=False)
 
-    logo = tk.PhotoImage(file='./db/logo.png')
+    logo = tk.PhotoImage(file='../db/logo.png')
     labelLogo = tk.Label(app, image=logo)
     labelLogo.place(x=40,y=0)
 
