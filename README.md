@@ -35,6 +35,7 @@ conceito, que visa o apoio a medicina em locais precarios.
 ### Importante!
 * Nota:
   ##### Para o funcionamento correto do aplicativo é necessario executar o comando " pip install -r requirements.txt ".
+  ##### Programa ajustado para a resolução 1366x768
   ##### Além disso, durante todo o processo da automação ( Etapa em que o Whatsapp já estiver aberto ), **NÃO** mova seu cursor do mouse !!!! Isso irá afetar o programa e possivelmente gerar erros indesejados.
 
   
