@@ -7,22 +7,22 @@ from leitura_arquivos import leitura_frases
 def iniciar_automacao(name,num_file,msg):
     try:
         if (num_file == 1):
-                frases = leitura_frases("./db/listapergunta1.txt")
+                frases = leitura_frases("../db/listapergunta1.txt")
                 pergunta_enviada = frases[msg - 1]
                 enviar_pergunta(name,pergunta_enviada)
 
         elif (num_file == 2):
-            frases = leitura_frases("./db/listapergunta1.txt")
+            frases = leitura_frases("../db/listapergunta1.txt")
             pergunta_enviada = frases[msg - 1]
             enviar_pergunta(name,pergunta_enviada)
 
         elif (num_file == 3):
-            frases = leitura_frases("./db/listapergunta1.txt")
+            frases = leitura_frases("../db/listapergunta1.txt")
             pergunta_enviada = frases[msg - 1]
             enviar_pergunta(name,pergunta_enviada)
 
         elif (num_file == 4):
-            frases = leitura_frases("./db/listapergunta1.txt")
+            frases = leitura_frases("../db/listapergunta1.txt")
             pergunta_enviada = frases[msg - 1]
             enviar_pergunta(name,pergunta_enviada)
         else:
