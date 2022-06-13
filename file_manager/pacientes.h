@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void cadastrar_paciente(){
     char paciente[40];
@@ -6,7 +7,8 @@ void cadastrar_paciente(){
     FILE* file = fopen("../db/Contatos.txt","a");
 
     printf("Inserir paciente: ");
-    scanf("%s", paciente);
+    fflush(stdin);
+    gets(paciente);
 
     fprintf(file,paciente);
     fprintf(file,"\n");
