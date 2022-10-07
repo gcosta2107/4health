@@ -1,7 +1,8 @@
 # 4heatlh
 
 - Projeto feito para cunho educativo, voltado para produção de uma prova de 
-conceito, que visa o apoio a medicina em locais precarios.
+conceito, que visa o apoio a medicina em locais precarios por meio do monitoramento
+de pacientes pós-consulta.
 
 ### Integrantes
 
